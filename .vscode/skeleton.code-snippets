@@ -1,0 +1,16 @@
+{
+  "Skeleton": {
+    "scope": "cpp",
+    "prefix": "skeleton",
+    "body": [
+      "#include <iostream>",
+      "using namespace std;",
+      "",
+      "int main() {",
+      "\t$0",
+      "\treturn 0;",
+      "}",
+      ""
+    ]
+  }
+}
