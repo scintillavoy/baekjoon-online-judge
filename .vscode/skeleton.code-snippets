@@ -7,6 +7,8 @@
       "using namespace std;",
       "",
       "int main() {",
+      "\tcin.tie(nullptr);",
+      "\tios_base::sync_with_stdio(false);",
       "\t$0",
       "\treturn 0;",
       "}",
