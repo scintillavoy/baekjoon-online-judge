@@ -23,11 +23,11 @@ int main() {
   queue<int> bfs_queue;
   for (int i = 0; i < N; ++i) {
     for (int from = 0; from < N; ++from) {
+      if (total_revenue[from] == numeric_limits<long long>::min()) {
+        continue;
+      }
       for (const auto &adj : graph[from]) {
         auto [to, price] = adj;
-        if (total_revenue[from] == numeric_limits<long long>::min()) {
-          continue;
-        }
         if (total_revenue[to] < total_revenue[from] - price + revenue[to]) {
           if (i == N - 1) {
             bfs_queue.push(from);
