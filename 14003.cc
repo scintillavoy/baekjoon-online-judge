@@ -14,14 +14,12 @@ int main() {
   }
   vector<int> memo;
   vector<int> length(N);
-  memo.push_back(A[0]);
-  length[0] = 1;
-  for (int i = 1; i < N; ++i) {
-    if (memo.back() < A[i]) {
+  for (int i = 0; i < N; ++i) {
+    auto it = lower_bound(memo.begin(), memo.end(), A[i]);
+    if (it == memo.end()) {
       memo.push_back(A[i]);
       length[i] = memo.size();
     } else {
-      auto it = lower_bound(memo.begin(), memo.end(), A[i]);
       *it = A[i];
       length[i] = it - memo.begin() + 1;
     }
